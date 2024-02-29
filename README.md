@@ -1,5 +1,5 @@
 # WebXR iOS
-WebXR Polyfill for iOS that works with the normal polyfill
+WebXR for iOS that works with the normal polyfill
 
 # Setup and installation
 - Download `/build/webxr-ios.min.js`
