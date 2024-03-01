@@ -3,14 +3,18 @@
  // Do not rebrand if you are distributing it
  // © Copyright 2022 CrazyH
 
-export default polyfill {
+const supportedSessions = ["immersive-vr"];
+
+export default XRSystem {
   constructor(config) {
     this.config = config;
-    this.run();
   };
 
-  async run() {
-
+  async isSessionSupported(sessionType) {
+    return supportedSessions.includes(sessionType);
   };
- 
+
+  async requestSession() {
+    
+  };
 };
