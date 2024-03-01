@@ -4,6 +4,7 @@
  // © Copyright 2022 CrazyH
 
 import config_defaults from "./config";
+import polyfill from "./polyfill";
 
 export default class WebXR_iOS {
  constructor(config = {}) {
@@ -13,7 +14,7 @@ export default class WebXR_iOS {
  };
 
  async run() {
-
+   window.navigator.xr = new polyfill();
  };
 
 };
