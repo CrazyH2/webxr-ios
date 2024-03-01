@@ -5,7 +5,15 @@
 
 import config_defaults from "./config";
 
-class WebXR_iOS {
-};
+export default class WebXR_iOS {
+ constructor(config = {}) {
+   this.config = Object.freeze(Object.assign({}, config_defaults, config));
   
-export default WebXR_iOS;
+   if (!('xr' in window.navigator)) this.run();
+ };
+
+ async run() {
+
+ };
+
+};
