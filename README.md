@@ -1,3 +1,7 @@
+```
+Note: this only supports "immersive-vr" currently.
+```
+
 # WebXR iOS
 WebXR for iOS that works with the normal polyfill
 

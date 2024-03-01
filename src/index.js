@@ -4,32 +4,38 @@
  // © Copyright 2022 CrazyH
 
 import config_defaults from "./config";
-import XRSystem from "./classes/xrsystem";
+import XRSystem from "./classes/XRSystem";
 
-const supportedSessions = ["immersive-vr"];
+const supportedSessions = {
+  "immersive-vr": {
+    requiredFeatures: ['viewer', 'local'],
+    optionalFeatures: [],
+    supportedFeatures: ['viewer', 'local'],
+  },
+};
 
 export default class WebXR_iOS {
- constructor(config = {}) {
-   this.config = Object.freeze(Object.assign({}, config_defaults, config));
+  constructor(config = {}) {
+    this.config = Object.freeze(Object.assign({}, config_defaults, config));
   
-   if (!('xr' in window.navigator) && this.isiOS()) this.run();
- };
+    if (!('xr' in window.navigator) && this.isiOS()) this.run();
+  };
 
- isiOS() {
-   return [
-     'iPad Simulator',
-     'iPhone Simulator',
-     'iPod Simulator',
-     'iPad',
-     'iPhone',
-     'iPod'
-   ].includes(navigator.platform)
-   // iPad on iOS 13 detection
-   || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
- };
+  isiOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+  };
 
- async run() {
-   window.navigator.xr = new XRSystem(this.config, supportedSessions);
- };
+  async run() {
+    window.navigator.xr = new XRSystem(this.config, supportedSessions);
+  };
 
 };
