@@ -6,6 +6,8 @@
 import config_defaults from "./config";
 import XRSystem from "./classes/xrsystem";
 
+const supportedSessions = ["immersive-vr"];
+
 export default class WebXR_iOS {
  constructor(config = {}) {
    this.config = Object.freeze(Object.assign({}, config_defaults, config));
@@ -27,7 +29,7 @@ export default class WebXR_iOS {
  };
 
  async run() {
-   window.navigator.xr = new XRSystem(this.config);
+   window.navigator.xr = new XRSystem(this.config, supportedSessions);
  };
 
 };

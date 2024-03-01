@@ -3,15 +3,14 @@
  // Do not rebrand if you are distributing it
  // © Copyright 2022 CrazyH
 
-const supportedSessions = ["immersive-vr"];
-
 export default XRSystem {
-  constructor(config) {
+  constructor(config, supportedSessions) {
     this.config = config;
+    this.supportedSessions = supportedSessions;
   };
 
   async isSessionSupported(sessionType) {
-    return supportedSessions.includes(sessionType);
+    return this.supportedSessions.includes(sessionType);
   };
 
   async requestSession() {
