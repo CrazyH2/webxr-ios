@@ -6,6 +6,11 @@
 export default polyfill {
   constructor(config) {
     this.config = config;
+    this.run();
   };
 
+  async run() {
+
+  };
+ 
 };
