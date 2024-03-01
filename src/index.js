@@ -4,7 +4,7 @@
  // © Copyright 2022 CrazyH
 
 import config_defaults from "./config";
-import XRSystem from "./xrsystem";
+import XRSystem from "./classes/xrsystem";
 
 export default class WebXR_iOS {
  constructor(config = {}) {
