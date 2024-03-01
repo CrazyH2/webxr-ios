@@ -14,7 +14,7 @@ export default class WebXR_iOS {
  };
 
  async run() {
-   window.navigator.xr = new polyfill();
+   window.navigator.xr = new polyfill(this.config);
  };
 
 };
