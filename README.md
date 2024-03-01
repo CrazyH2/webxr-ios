@@ -9,11 +9,9 @@ WebXR for iOS that works with the normal polyfill
 import WebXR_iOS from "./webxr-ios.min.js";
 
 var xr_ios = WebXR_iOS({
-
+  debug: false,
+  ui: true,
 });
-
-// In your render loop
-xr_ios.render()
 ```
 
 # Are you supported?
